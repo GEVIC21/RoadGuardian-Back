@@ -1,0 +1,23 @@
+body {
+	overflow-x: hidden;
+	direction: rtl;
+}
+
+.list-unstyled {
+	padding-right: 0;
+}
+
+.owl-carousel {
+	direction: ltr;
+}
+
+.owl-carousel .owl-nav,
+.owl-carousel .owl-dots,
+.owl-carousel .owl-item {
+	direction: rtl;
+}
+
+.main-slider h2 span:before {
+	left: auto;
+	right: 15px;
+}

@@ -1,10 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="POST">
+<form method="POST" class=" comment-one__form contact-form-validated comment-one__login-form">
     {# This hidden_tag is a CSRF security feature. #}
     {{ form.hidden_tag() }}
-    {{ form.email.label }} {{ form.email() }}
-    {{ form.password.label }} {{ form.password() }}
-    {{ form.submit() }}
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="comment-form__input-box">
+                {{ form.email.label }} {{ form.email() }}
+            </div>
+        </div>
+        <div class="col-xl-12">
+            <div class="comment-form__input-box">
+                {{ form.password.label }} {{ form.password() }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="comment-form__btn-box text-center">
+                {{ form.submit() }}
+            </div>
+        </div>
+    </div>
 </form>
 {% endblock %}
