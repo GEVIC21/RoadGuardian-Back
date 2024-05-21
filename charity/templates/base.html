@@ -72,7 +72,7 @@
         <div class="main-menu-wrapper__left">
           <div class="main-menu-wrapper__logo">
             <a href="{{ url_for('core.index') }}"><img
-                src="{{ url_for('static', filename='assets/images/resources/charity-2.png') }}" height="40" alt=""></a>
+                src="{{ url_for('static', filename='assets/images/resources/charity-2.png') }}" height="50" alt=""></a>
           </div>
         </div>
         <div class="main-menu-wrapper__main-menu">
@@ -84,7 +84,7 @@
             {% if current_user.is_authenticated %}
             <li><a href="{{ url_for('users.logout') }}">Se déconnecter</a></li>
             <li><a href="{{ url_for('users.account') }}">Compte</a></li>
-            <li><a href="{{ url_for('blog_posts.create_post') }}">Créer un Post</a></li>
+            <li><a href="{{ url_for('blog_posts.create_post') }}">Créer un Projet</a></li>
             {% else %}
           </ul>
         </div>
@@ -99,7 +99,7 @@
 
       </div>
     </nav>
-    <div class="container">
+    <div>
       {% block content %}
 
       {% endblock %}
@@ -212,6 +212,39 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
+
+
+  <script src="{{ url_for('static', filename='assets/vendors/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/vegas/vegas.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-ui/jquery-ui.js') }}"></script>
+  
+  <script src="{{ url_for('static', filename='assets/vendors/timepicker/timePicker.js') }}"></script>
+  <!-- template js -->
+  <script src="{{ url_for('static', filename='assets/js/pifoxen.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendors/countdown/countdown.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/bxslider/jquery.bxslider.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendors/wnumb/wNumb.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/wow/wow.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/isotope/isotope.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendors/odometer/odometer.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/swiper/swiper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/tiny-slider/tiny-slider.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-validate/jquery.validate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/nouislider/nouislider.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-appear/jquery.appear.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js') }}"></script>
+  
+  <script src="{{ url_for('static', filename='assets/vendors/jquery/jquery-3.6.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendors/jarallax/jarallax.min.js') }}"></script>
 </body>
 
 </html>

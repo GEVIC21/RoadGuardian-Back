@@ -41,24 +41,27 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"UserName: {self.username}"
-
+    
 class BlogPost(db.Model):
-    # Setup the relationship to the User table
-    users = db.relationship(User)
+            # Setup the relationship to the User table
+            users = db.relationship(User)
 
-    # Model for the Blog Posts on Website
-    id = db.Column(db.Integer, primary_key=True)
-    # Notice how we connect the BlogPost to a particular author
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    title = db.Column(db.String(140), nullable=False)
-    text = db.Column(db.Text, nullable=False)
+            # Model for the Blog Posts on Website
+            id = db.Column(db.Integer, primary_key=True)
+            # Notice how we connect the BlogPost to a particular author
+            user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+            date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+            libelle = db.Column(db.String(140), nullable=False)
+            description = db.Column(db.Text, nullable=False)
+            categorie = db.Column(db.String(140), nullable=False)
+            image = db.Column(db.String(255), nullable=True)
 
-    def __init__(self, title, text, user_id):
-        self.title = title
-        self.text = text
-        self.user_id =user_id
+            def __init__(self, libelle, description, categorie, user_id, image=None):
+                self.libelle = libelle
+                self.description = description
+                self.categorie = categorie
+                self.user_id = user_id
+                self.image = image
 
-
-    def __repr__(self):
-        return f"Post Id: {self.id} --- Date: {self.date} --- Title: {self.title}"
+            def __repr__(self):
+                return f"Post Id: {self.id} --- Date: {self.date} --- Title: {self.libelle}"

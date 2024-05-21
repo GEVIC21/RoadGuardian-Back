@@ -6,7 +6,8 @@ from flask_login import LoginManager
 
 login_manager = LoginManager()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
+
 
 # This is the secret key that will be used to encrypt the session cookie.
 #############################################################################
@@ -17,9 +18,10 @@ app = Flask(__name__)
 # when you deploy this to a real website.
 # export SECRET_KEY=mysecret
 # set SECRET_KEY=mysecret
-app.config['SECRET_KEY'] = 'mysecret'
+# app.config['SECRET_KEY'] = 'mysecret'
 
 app.config['SECRET_KEY'] = "mysecretkey"
+# app.config['UPLOAD_FOLDER'] = 'charity/static/uploads'
 
 #################################
 ### DATABASE SETUPS ############
