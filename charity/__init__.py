@@ -3,11 +3,15 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_cors import CORS
+
 
 login_manager = LoginManager()
 
-app = Flask(__name__, static_folder='static')
+ 
 
+app = Flask(__name__, static_folder='static')
+CORS(app)
 
 # This is the secret key that will be used to encrypt the session cookie.
 #############################################################################
@@ -53,14 +57,17 @@ login_manager.login_view = "users.login"
 
 # Import these at the top if you want
 # We've imported them here for easy reference
+
 from charity.core.views import core
 from charity.users.views import users
 from charity.blog_posts.views import blog_posts
 from charity.error_pages.handlers import error_pages
+from charity.api.api_route import api_bp
 
 # Register the apps
 app.register_blueprint(users)
 app.register_blueprint(blog_posts)
 app.register_blueprint(core)
 app.register_blueprint(error_pages)
+app.register_blueprint(api_bp, url_prefix='/api')
 

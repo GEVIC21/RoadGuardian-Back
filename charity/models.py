@@ -49,7 +49,7 @@ class BlogPost(db.Model):
             # Model for the Blog Posts on Website
             id = db.Column(db.Integer, primary_key=True)
             # Notice how we connect the BlogPost to a particular author
-            user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+            user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
             date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
             libelle = db.Column(db.String(140), nullable=False)
             description = db.Column(db.Text, nullable=False)
